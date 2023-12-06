@@ -1,9 +1,14 @@
 package com.example.activity7.model
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.activity7.data.Siswa
 import com.example.activity7.repositori.RepositoriSiswa
+import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.filterNotNull
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
 
 class HomeViewModel(private val repositoriSiswa: RepositoriSiswa): ViewModel() {
     companion object {
